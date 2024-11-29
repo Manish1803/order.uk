@@ -1,0 +1,144 @@
+{
+  "logo": "https://res.cloudinary.com/df6bjvmam/image/upload/f_avif,q_95/v1732892753/orderUK/nz6puy7x8v4ny8cayewl.png",
+  "footerLogo": "https://res.cloudinary.com/df6bjvmam/image/upload/f_avif,q_95/v1732892753/orderUK/kejwhxdnlvjlpfsziyda.png",
+  "downloadLogo": "https://res.cloudinary.com/df6bjvmam/image/upload/f_avif,q_95/v1732892753/orderUK/am16cpf4pue23myzft2f.png",
+  "profileImg": "https://res.cloudinary.com/df6bjvmam/image/upload/w_300,ar_1:1,c_fill,g_auto/v1732548442/orderUK/ukp2huat8uiykh1crguo.jpg",
+  "homeBanner": "https://res.cloudinary.com/df6bjvmam/image/upload/f_avif,q_95/v1732888485/orderUK/ocf2mfjdsfrt4q1sa9sb.png",
+  "mcdBanner": "https://res.cloudinary.com/df6bjvmam/image/upload/f_avif,q_95/v1732888482/orderUK/o3a7qnmp6sq31rkaepuq.png",
+  "downloadBanner": "https://res.cloudinary.com/df6bjvmam/image/upload/f_avif,q_95/v1732888484/orderUK/t7buz9xywubzcgn725b5.png",
+  "appRating": "https://res.cloudinary.com/df6bjvmam/image/upload/v1732888481/orderUK/ktbkro9cc2cg3ivdq0lw.png",
+  "popularCategories": [
+    {
+      "id": 1,
+      "categoryName": "Burgers & Fast Food",
+      "noOfRestaurants": 21,
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888482/orderUK/fxqqciefgpkc7dxbwgtk.png"
+    },
+    {
+      "id": 2,
+      "categoryName": "Salads",
+      "noOfRestaurants": 32,
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888482/orderUK/bue3yywnn6ute8qpatxj.png"
+    },
+    {
+      "id": 3,
+      "categoryName": "Pasta & Casuals",
+      "noOfRestaurants": 34,
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888482/orderUK/gke3volvsektzyszooti.png"
+    },
+    {
+      "id": 4,
+      "categoryName": "Pizza",
+      "noOfRestaurants": 12,
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888482/orderUK/jo9q6njvt78w7y279kan.png"
+    },
+    {
+      "id": 5,
+      "categoryName": "Breakfast",
+      "noOfRestaurants": 12,
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732435774/samples/breakfast.jpg"
+    },
+    {
+      "id": 6,
+      "categoryName": "Soups",
+      "noOfRestaurants": 12,
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888483/orderUK/pnzk7fawxn8d9ykspbga.png"
+    }
+  ],
+  "popularRestaurants": [
+    {
+      "id": 1,
+      "restaurantName": "Burger King",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888484/orderUK/vruitukzu4uefk8ku7af.png"
+    },
+    {
+      "id": 2,
+      "restaurantName": "McDonalds",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888484/orderUK/gkn0klzephddw9taqxny.png"
+    },
+    {
+      "id": 3,
+      "restaurantName": "KFC West London",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888484/orderUK/nx5y9fuf5usiujd5hygn.png"
+    },
+    {
+      "id": 4,
+      "restaurantName": "Texas Chicken",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888485/orderUK/qs7mnfhf2cbmlgesbbfn.png"
+    },
+    {
+      "id": 5,
+      "restaurantName": "Burger King",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888485/orderUK/fbuzl3hzhfuxruf5wfxs.png"
+    },
+    {
+      "id": 6,
+      "restaurantName": "Shaurma 1",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_600,ar_1:1,c_fill,g_auto,f_avif,q_95/v1732888485/orderUK/ei9ca0gpavfzyoezawfr.png"
+    }
+  ],
+  "exclusiveDeals": [
+    {
+      "id": 1,
+      "name": "Chef Burgers London",
+      "dealOffer": "40%",
+      "type": "Restaurant",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_1000,c_limit,f_avif,q_100/v1732888484/orderUK/bcekybr9upp6vhvo6zf8.png"
+    },
+    {
+      "id": 2,
+      "name": "Grand Ai Cafe London",
+      "dealOffer": "20%",
+      "type": "Restaurant",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_1000,c_limit,f_avif,q_100/v1732888484/orderUK/ywxjp9xjvm3xksuqky0z.png"
+    },
+    {
+      "id": 3,
+      "name": "Butterbrot Caf’e London",
+      "dealOffer": "20%",
+      "type": "Restaurant",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_1000,c_limit,f_avif,q_100/v1732888484/orderUK/owidc6angy0txkjuon7z.png"
+    }
+  ],
+  "offersDeals": [
+    {
+      "id": 1,
+      "name": "First Order Discount",
+      "dealOffer": "20%",
+      "subtitle": "McDonald’s East London",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_1000,c_limit,f_avif,q_100/v1732888482/orderUK/mxfzl6pkgmmbhhttpgih.png"
+    },
+    {
+      "id": 2,
+      "name": "Vegan Discount",
+      "dealOffer": "20%",
+      "subtitle": "McDonald’s East London",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_1000,c_limit,f_avif,q_100/v1732888483/orderUK/g1uayefuifzronlmutnf.png"
+    },
+    {
+      "id": 3,
+      "name": "Free ice Cream Offer",
+      "dealOffer": "100%",
+      "subtitle": "McDonald’s East London",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_1000,c_limit,f_avif,q_100/v1732888483/orderUK/txxlehbm9ss6yp3n8wjl.png"
+    }
+  ],
+  "signupBanner": [
+    {
+      "id": 1,
+      "title": "Partner with us",
+      "subtitle": "Signup as a business",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_1000,h_500,c_limit,f_avif,q_100/v1732888485/orderUK/d3pw2pdeosxkwmfrhhvv.png",
+      "desc": "Earn more with lower fees",
+      "button": "Get Started"
+    },
+    {
+      "id": 2,
+      "title": "Ride with us",
+      "subtitle": "Signup as a rider",
+      "image": "https://res.cloudinary.com/df6bjvmam/image/upload/w_1000,h_500,c_limit,f_avif,q_100/v1732888486/orderUK/klajlt8unphdraiuq1ik.png",
+      "desc": "Avail exclusive perks",
+      "button": "Get Started"
+    }
+  ]
+}
