@@ -22,3 +22,27 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
+
+input:focus {
+  outline: var(--color-primary) auto 1px;
+  background-color: #fff;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 55em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 48em) {
+  html {
+    font-size: 56.25%;
+  }
+}
