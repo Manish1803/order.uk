@@ -9,10 +9,13 @@ exports.register = async (req, res) => {
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ message: "User already exists!" });
+      return res
+        .status(400)
+        .json({ success: false, message: "User already exists! Please login" });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 12);
+    const salt = parseInt(process.env.SALT, 10) || 10;
+    const hashedPassword = await bcrypt.hash(password, salt);
     const newUser = new User({
       name,
       phone,
@@ -23,6 +26,7 @@ exports.register = async (req, res) => {
     await newUser.save();
 
     res.status(201).json({
+      success: true,
       message: "User created successfully!",
       user: {
         id: newUser._id,
