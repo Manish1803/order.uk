@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
+import useMobile from "./../hooks/useMobile";
 
 const AppContext = createContext();
 
@@ -26,6 +27,7 @@ const reducer = (state, action) => {
 function AppProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { data } = state;
+  const isMobile = useMobile();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,7 +48,7 @@ function AppProvider({ children }) {
   }, []);
 
   return (
-    <AppContext.Provider value={{ websiteData: data }}>
+    <AppContext.Provider value={{ websiteData: data, isMobile }}>
       {children}
     </AppContext.Provider>
   );
