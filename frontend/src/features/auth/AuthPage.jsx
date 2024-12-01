@@ -3,6 +3,8 @@ import styles from "./AuthPage.module.css";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 
+import { Footer } from "./../../components";
+
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
 
@@ -43,6 +45,7 @@ function AuthPage() {
           aria-label="Juicy burger with crispy golden fries"
         ></section>
       </main>
+      <Footer />
     </>
   );
 }
