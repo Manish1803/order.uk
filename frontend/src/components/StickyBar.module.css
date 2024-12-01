@@ -1,0 +1,41 @@
+.stickyBar {
+  position: sticky;
+  top: 0;
+  z-index: 12;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 4rem;
+  font-size: 1.4rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  background-color: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.promoText {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.promo {
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.child {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 2rem;
+}

@@ -1,0 +1,131 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 130rem;
+  margin: 0 auto;
+
+  padding: 0 4rem;
+  margin-top: 3rem;
+}
+
+.navLogo {
+  height: 4rem;
+  width: fit-content;
+  object-fit: cover;
+}
+
+.mainNav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.4rem;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.navLink {
+  cursor: pointer;
+}
+
+.navLink a:link,
+.navLink a:visited {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.navLink a:global(.active) {
+  color: #fff;
+  background-color: var(--color-primary);
+  padding: 1rem 3rem;
+  border-radius: 3rem;
+}
+
+/* .profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #03081f;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+} */
+
+/* Mobile Menu */
+
+.mobileMenu {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+  padding: 1rem;
+}
+
+.mobileIcon {
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 0.5rem;
+}
+
+@media (max-width: 48em) {
+  .header {
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .mobileMenu {
+    display: block;
+    z-index: 99;
+    border-left: 2px solid #d5d1ce;
+  }
+
+  .navLogo {
+    margin: 2rem;
+  }
+
+  .mainNav {
+    z-index: 99;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* transform: translateX(100%); */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .navOpen .mainNav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .navOpen .profile {
+    display: none;
+  }
+
+  .navList {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+}

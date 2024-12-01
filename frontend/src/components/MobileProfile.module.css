@@ -1,0 +1,22 @@
+.mobileProfile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 5rem;
+}
+
+.profile {
+  background-color: var(--color-primary);
+  color: var(--color-subtitle);
+  display: flex;
+  align-items: center;
+  padding: 2rem 2rem 2rem 3rem;
+  font-size: 1.6rem;
+  gap: 2rem;
+}
+
+.profilePic {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 50%;
+}

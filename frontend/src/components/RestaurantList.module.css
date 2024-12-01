@@ -1,0 +1,67 @@
+.section {
+  padding: 0 4rem;
+}
+
+.heading {
+  font-size: 2.4rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+
+  overflow-y: scroll;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.resCard {
+  flex: 1 0 calc((100% / 6) - 0);
+  max-width: calc((100% / 6) - 0);
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  border: 1px solid #d5d1ce;
+}
+
+.resCard img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.resDetail {
+  background-color: var(--color-primary);
+  padding: 1rem 0;
+}
+
+.resName {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+@media (max-width: 48em) {
+  .section {
+    padding: 0 2rem;
+    padding-right: 0;
+  }
+
+  .resCard {
+    flex: 1 0 calc((100% / 3.2) - 2rem);
+    max-width: calc((100% / 3.2) - 2rem);
+  }
+}
+
+@media (max-width: 30em) {
+  .resCard {
+    flex: 1 0 calc((100% / 2.2) - 2rem);
+    max-width: calc((100% / 2.2) - 2rem);
+  }
+}

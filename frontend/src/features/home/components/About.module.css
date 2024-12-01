@@ -1,0 +1,171 @@
+.section {
+  padding: 0 4rem;
+}
+
+.heading {
+  font-size: 2.4rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.about {
+  padding: 6rem;
+  background-color: #d9d9d9;
+  border-radius: 1rem;
+}
+
+.aboutList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  font-size: 1.2rem;
+}
+
+.active {
+  border: 1px solid var(--color-primary);
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 4rem;
+  border-radius: 1rem;
+}
+
+.faq {
+  list-style: none;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.faq li:first-child {
+  width: fit-content;
+  margin: 0 auto;
+  background-color: var(--color-primary);
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+}
+
+/* PROCESS */
+
+.processList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #d9d9d9;
+  border-radius: 1rem;
+}
+
+.stepTitle {
+  font-size: 1.4rem;
+}
+
+.stepImage {
+  height: 10rem;
+  width: fit-content;
+  object-fit: cover;
+  align-self: center;
+}
+
+.stepDesc {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.info {
+  width: 70%;
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 48em) {
+  .section {
+    padding: 0 2rem;
+  }
+
+  .about {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .heading {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .aboutList,
+  .active {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 4rem;
+    padding: 0;
+    border-radius: 1rem;
+  }
+
+  /* FAQ */
+  .faq {
+    width: 100%;
+  }
+
+  .faq li:first-child {
+    margin: 0 auto;
+    background-color: var(--color-primary);
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+  }
+
+  /* Process */
+
+  .process {
+    width: 100%;
+    background-color: var(--bg-footer-dark);
+    padding: 4rem 6rem;
+    border-radius: 1rem;
+  }
+
+  .processList {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    background-color: transparent;
+  }
+
+  .info {
+    width: 100%;
+    font-size: 1.2rem;
+    margin: 3rem 0;
+    color: #fff;
+  }
+}
