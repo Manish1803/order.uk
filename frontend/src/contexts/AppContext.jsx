@@ -56,7 +56,10 @@ function AppProvider({ children }) {
       const foodItems = await foodRes.json();
       setFoodItems(foodItems.foodItems);
     } catch (error) {
-      console.error("Error fetching food items:", error);
+      console.error({
+        message: "Error fetching food items:",
+        error,
+      });
     }
   };
 
@@ -134,9 +137,7 @@ function AppProvider({ children }) {
         headers: { token },
       });
       setCartItems(res.data.cartData);
-    } catch (error) {
-      console.error("Error loading cart data:", error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
