@@ -14,7 +14,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/admin", require("./routes/adminRoute"));
+app.use("/api/user", require("./routes/userRoutes"));
+app.use("/api/food", require("./routes/foodRoute"));
+app.use("/api/cart", require("./routes/cartRoute"));
 
 app.get("/", (req, res) => {
   res.send("API is running!");
