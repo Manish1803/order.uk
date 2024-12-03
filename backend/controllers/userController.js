@@ -57,11 +57,38 @@ exports.login = async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, role: user.role },
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
     );
 
     res.status(200).json({
       message: "Login successful!",
+      user: user,
+      token,
+    });
+  } catch (error) {
+    res.status(500).json({ message: `Something went wrong!: ${error}` });
+  }
+};
+
+exports.validateToken = async (req, res) => {
+  try {
+    const token = req.headers.authorization?.split(" ")[1];
+
+    if (!token) {
+      return res.status(401).json({ message: "No token provided!" });
+    }
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.id).select("-password");
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found!" });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Token is valid",
       user: {
         id: user._id,
         name: user.name,
@@ -69,9 +96,8 @@ exports.login = async (req, res) => {
         email: user.email,
         role: user.role,
       },
-      token,
     });
   } catch (error) {
-    res.status(500).json({ message: `Something went wrong!: ${error}` });
+    return res.status(401).json({ message: "Token validation failed!", error });
   }
 };

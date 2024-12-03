@@ -28,6 +28,10 @@ function Payment() {
   const navigate = useNavigate();
 
   const handlePayment = () => {
+    if (getTotalPrice() === 0) {
+      alert("Please select at least one item.");
+      navigate("/product");
+    }
     if (availableBalance < getTotalPrice()) {
       alert("Insufficient balance! Please add funds to your wallet.");
     } else {

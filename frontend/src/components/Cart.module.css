@@ -219,3 +219,8 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+.btnCheckout:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

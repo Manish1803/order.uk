@@ -8,8 +8,6 @@ import {
   StickyBar,
   MainNavBar,
   Main,
-  Spinner,
-  RestaurantList,
   Footer,
 } from "./../../components";
 import { useNavigate } from "react-router-dom";

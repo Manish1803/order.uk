@@ -1,12 +1,16 @@
 import styles from "./MainNavBar.module.css";
 import { useApp } from "./../contexts/AppContext";
+import { useAuth } from "../contexts/UserContext";
 
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 import { IoMenu, IoClose } from "react-icons/io5";
+import { FaCircleUser } from "react-icons/fa6";
 
 function MainNavBar() {
+  const { username, isAuthenticate } = useAuth();
+  const navigate = useNavigate();
   const location = useLocation();
   const { isMobile } = useApp();
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -29,7 +33,21 @@ function MainNavBar() {
           </li>
           <li className={styles.navLink}>Track Order</li>
         </ul>
-        {!isMobile && <h1>Login</h1>}
+        {!isMobile &&
+          (!isAuthenticate ? (
+            <div className={styles.userProfile} onClick={() => navigate("/")}>
+              <FaCircleUser color="#fc8a06" size="1.6rem" />
+              <p className={styles.userName}>Login/Signup </p>
+            </div>
+          ) : (
+            <div
+              className={styles.userProfile}
+              onClick={() => navigate("/profile")}
+            >
+              <FaCircleUser color="#fc8a06" size="1.6rem" />
+              <p className={styles.userName}>Hey {username}</p>
+            </div>
+          ))}
       </nav>
 
       {isMobile && (

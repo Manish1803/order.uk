@@ -119,9 +119,15 @@ function Cart() {
           <button
             className={styles.btnCheckout}
             onClick={() => navigate("/checkout")}
+            disabled={getTotalPrice() < 20}
           >
             <FaCircleArrowRight size="3rem" color="#fff" /> <p>Checkout!</p>
           </button>
+          {getTotalPrice() < 20 && (
+            <p className={styles.warning}>
+              Minimum delivery is ₹20, You must Spend ₹10 more for the checkout!
+            </p>
+          )}
         </div>
       </div>
     </article>

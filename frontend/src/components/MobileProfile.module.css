@@ -2,9 +2,11 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 5rem;
+  cursor: pointer;
 }
 
-.profile {
+.profile,
+.profileLogin {
   background-color: var(--color-primary);
   color: var(--color-subtitle);
   display: flex;

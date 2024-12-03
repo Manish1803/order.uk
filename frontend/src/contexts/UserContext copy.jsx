@@ -1,4 +1,4 @@
-import { createContext, useEffect, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import axios from "axios";
 
 const UserContext = createContext();
@@ -6,7 +6,7 @@ const UserContext = createContext();
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const initialState = {
-  user: null,
+  user: JSON.parse(localStorage.getItem("user")) || null,
   isAuthenticate: false,
   token: localStorage.getItem("token") || null,
   isLoading: false,
@@ -36,15 +36,6 @@ const userReducer = (state, action) => {
         isLoading: false,
         error: null,
       };
-    case "setAuthenticated":
-      return {
-        ...state,
-        user: action.payload.user,
-        token: action.payload.token,
-        isAuthenticate: true,
-        isLoading: false,
-        error: null,
-      };
     case "error":
       return {
         ...state,
@@ -62,30 +53,7 @@ const userReducer = (state, action) => {
 function UserProvider({ children }) {
   const [state, dispatch] = useReducer(userReducer, initialState);
 
-  const { user, token, isAuthenticate } = state;
-
-  useEffect(() => {
-    const validateToken = async () => {
-      if (token) {
-        dispatch({ type: "loading" });
-        try {
-          const res = await axios.get(`${BASE_URL}/api/user/validate`, {
-            headers: { Authorization: `Bearer ${token}` },
-          });
-          const { user } = res.data;
-
-          dispatch({ type: "setAuthenticated", payload: { user, token } });
-        } catch (error) {
-          console.error(
-            "Token validation failed:",
-            error.response?.data?.message
-          );
-          logout();
-        }
-      }
-    };
-    validateToken();
-  }, [token]);
+  const { user, isAuthenticate } = state;
 
   const signup = async (name, phone, email, password) => {
     dispatch({ type: "loading" });
@@ -142,9 +110,8 @@ function UserProvider({ children }) {
   };
 
   const username =
-    user?.name?.split(" ")[0] ||
-    JSON.parse(localStorage.getItem("user"))?.name?.split(" ")[0] ||
-    "";
+    user.name.split(" ")[0] ||
+    JSON.parse(localStorage.getItem("user")).name.split(" ")[0];
 
   return (
     <UserContext.Provider

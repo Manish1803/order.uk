@@ -1,0 +1,82 @@
+.section {
+  padding: 0 4rem;
+}
+
+.heading {
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profileHeader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.profileContainer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: fit-content;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.profilePic {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.editButton {
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--color-primary);
+  padding: 0.5rem 2.5rem;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 1rem;
+}
+
+.profileDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+  row-gap: 2rem;
+}
+
+.inputContainer label {
+  display: block;
+  color: #0c1421;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.inputContainer input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.inputContainer input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
