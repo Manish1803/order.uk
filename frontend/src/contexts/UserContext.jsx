@@ -1,19 +1,19 @@
 import { createContext, useContext, useReducer } from "react";
 import axios from "axios";
 
-const AuthContext = createContext();
+const UserContext = createContext();
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const initialState = {
-  user: null,
+  user: JSON.parse(localStorage.getItem("user")) || null,
   isAuthenticate: false,
-  token: null,
+  token: localStorage.getItem("token") || null,
   isLoading: false,
   error: null,
 };
 
-const authReducer = (state, action) => {
+const userReducer = (state, action) => {
   switch (action.type) {
     case "loading":
       return { ...state, isLoading: true, error: null };
@@ -50,15 +50,15 @@ const authReducer = (state, action) => {
   }
 };
 
-function AuthProvider({ children }) {
-  const [state, dispatch] = useReducer(authReducer, initialState);
+function UserProvider({ children }) {
+  const [state, dispatch] = useReducer(userReducer, initialState);
 
   const { user, isAuthenticate } = state;
 
   const signup = async (name, phone, email, password) => {
     dispatch({ type: "loading" });
     try {
-      const res = await axios.post(`${BASE_URL}/api/auth/register`, {
+      const res = await axios.post(`${BASE_URL}/api/user/register`, {
         name,
         phone,
         email,
@@ -82,13 +82,14 @@ function AuthProvider({ children }) {
   const login = async (email, password) => {
     dispatch({ type: "loading" });
     try {
-      const res = await axios.post(`${BASE_URL}/api/auth/login`, {
+      const res = await axios.post(`${BASE_URL}/api/user/login`, {
         email,
         password,
       });
       const { token, user } = res.data;
 
       localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(user));
 
       dispatch({ type: "login", payload: { user, token } });
     } catch (error) {
@@ -109,7 +110,7 @@ function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider
+    <UserContext.Provider
       value={{
         user,
         isAuthenticate,
@@ -119,16 +120,16 @@ function AuthProvider({ children }) {
       }}
     >
       {children}
-    </AuthContext.Provider>
+    </UserContext.Provider>
   );
 }
 
 const useAuth = () => {
-  const context = useContext(AuthContext);
+  const context = useContext(UserContext);
   if (context === undefined) {
     throw new Error("useAuth must be used within a AuthProvider");
   }
   return context;
 };
 
-export { AuthProvider, useAuth };
+export { UserProvider, useAuth };

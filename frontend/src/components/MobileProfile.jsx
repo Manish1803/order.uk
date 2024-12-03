@@ -6,7 +6,7 @@ function MobileProfile() {
     <article className={styles.mobileProfile}>
       <div className={styles.profile}>
         <img
-          src="./profile.jpeg"
+          src="/profile.jpeg"
           alt="User Profile Picture"
           className={styles.profilePic}
         />

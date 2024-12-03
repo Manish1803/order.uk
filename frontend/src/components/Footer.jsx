@@ -12,12 +12,12 @@ function Footer() {
         <div className={styles.logoCol}>
           <img
             className={styles.footerLogo}
-            src="./footerLogo.png"
+            src="/footerLogo.png"
             alt="Order.uk Logo"
           />
           <img
             className={styles.downloadLogo}
-            src="./downloadLogo.png"
+            src="/downloadLogo.png"
             alt="Download App"
           />
           <p>Company # 490039-445, Registered with House of companies.</p>

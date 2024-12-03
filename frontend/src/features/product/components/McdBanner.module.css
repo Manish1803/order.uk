@@ -1,0 +1,139 @@
+.section {
+  padding: 0 4rem;
+}
+
+.container {
+  position: relative;
+  height: 40rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  padding: 4rem;
+}
+
+.details {
+  align-self: end;
+  font-size: 1.6rem;
+  padding-bottom: 4rem;
+}
+
+.heading {
+  font-size: 3.4rem;
+  font-weight: 500;
+}
+
+.infoList {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #fff;
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+}
+
+.infoItem img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.infoItem h3 {
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.dealClose {
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  z-index: 2;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 4rem;
+  font-size: 1.4rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.cimage {
+  padding: 2rem 0;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.appRating {
+  position: absolute;
+  width: 9rem;
+  height: auto;
+  object-fit: cover;
+  left: -4rem;
+  bottom: 0;
+  z-index: 2;
+}
+
+@media (max-width: 48em) {
+  .section {
+    padding: 0 2rem;
+  }
+
+  .container {
+    height: 70rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 2rem;
+  }
+
+  .details {
+    margin-top: 5rem;
+    align-self: normal;
+    grid-row: 2/3;
+  }
+
+  .heading {
+    font-size: 2.8rem;
+  }
+
+  .infoList {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .cimage {
+    padding: 0;
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .appRating {
+    width: 7rem;
+    height: auto;
+    object-fit: cover;
+    left: 2rem;
+    bottom: -3rem;
+    z-index: 2;
+  }
+}

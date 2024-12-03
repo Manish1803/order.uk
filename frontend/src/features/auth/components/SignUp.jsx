@@ -2,7 +2,7 @@ import styles from "./Form.module.css";
 
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import { useAuth } from "./../../../contexts/AuthContext";
+import { useAuth } from "./../../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 
 function SignUp() {

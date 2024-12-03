@@ -13,7 +13,7 @@ function MainNavBar() {
 
   return (
     <header className={`${styles.header} ${isNavOpen && styles.navOpen}`}>
-      <img className={styles.navLogo} src="./logo.png" alt="Order.uk Logo" />
+      <img className={styles.navLogo} src="/logo.png" alt="Order.uk Logo" />
 
       <nav className={styles.mainNav}>
         <ul className={styles.navList}>

@@ -29,7 +29,7 @@
   border: 1px solid #d5d1ce;
 }
 
-.resCard img {
+.resImage {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -47,6 +47,20 @@
   color: #fff;
 }
 
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.2rem;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+.gridCard {
+  background-color: var(--color-primary);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
 @media (max-width: 48em) {
   .section {
     padding: 0 2rem;
@@ -57,11 +71,22 @@
     flex: 1 0 calc((100% / 3.2) - 2rem);
     max-width: calc((100% / 3.2) - 2rem);
   }
+
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 @media (max-width: 30em) {
   .resCard {
     flex: 1 0 calc((100% / 2.2) - 2rem);
     max-width: calc((100% / 2.2) - 2rem);
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

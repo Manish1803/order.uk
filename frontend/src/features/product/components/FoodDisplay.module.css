@@ -1,0 +1,186 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.header {
+  width: 100%;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading {
+  font-size: 2.4rem;
+}
+
+.searchInput {
+  outline: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.searchContainer {
+  border: 1px solid #484848;
+  border-radius: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 4rem 1rem 2rem;
+  gap: 1rem;
+}
+
+.categoryContainer {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+
+.categories {
+  width: 100%;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 1rem 5rem;
+
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  gap: 3rem;
+}
+
+.categories::-webkit-scrollbar {
+  display: none;
+}
+
+.cbtn {
+  outline: none;
+  font-family: inherit;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0.5rem 2.5rem;
+  letter-spacing: 0.8px;
+  text-transform: capitalize;
+}
+
+.active {
+  background-color: var(--color-subtitle);
+  border-radius: 4rem;
+}
+
+/* FOOD DISPLAY */
+
+.mainContainer {
+  width: 100%;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 1rem 4rem;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8rem;
+}
+
+.foodItems {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.categoryName {
+  font-family: 500;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: var(--color-primary);
+}
+
+.itemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+/* FOODCARD */
+.foodCard {
+  position: relative;
+  overflow: hidden;
+  width: 34rem;
+  height: 16rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  column-gap: 1.5rem;
+}
+
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardName {
+  font-size: 1.6rem;
+}
+
+.cardDesc {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.cardPrice {
+  margin-top: auto;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 7rem;
+  height: 7rem;
+  background: linear-gradient(to bottom, #ffffff, #e3e3e3);
+  border-top-left-radius: 3rem;
+  /* z-index: 4; */
+}
+
+@media (max-width: 48em) {
+  .header {
+    display: none;
+  }
+
+  .categories {
+    gap: 2rem;
+  }
+}

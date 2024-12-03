@@ -54,6 +54,21 @@
   .heading {
     font-size: 1.8rem;
   }
+
+  .categoryCard {
+    background-color: var(--bg-footer-dark);
+    border: 1px solid #d5d1ce;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .categoryName {
+    color: var(--color-primary);
+  }
+
+  .number {
+    color: #fff;
+  }
 }
 
 @media (max-width: 30em) {

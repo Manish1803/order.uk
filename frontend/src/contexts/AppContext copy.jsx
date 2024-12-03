@@ -41,14 +41,13 @@ function AppProvider({ children }) {
   const { data, isDataLoading, error } = state;
 
   const [foodItems, setFoodItems] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState({});
   const [token, setToken] = useState(() => {
     const storedToken = localStorage.getItem("token");
     return storedToken || null;
   });
   const currency = "₹";
   const deliveryCharge = 10;
-  const [availableBalance, setAvailableBalance] = useState(1000);
 
   const fetchFoodItems = async () => {
     try {
@@ -71,7 +70,7 @@ function AppProvider({ children }) {
 
         dispatch({
           type: "success",
-          payload: { data: websiteData },
+          payload: { data: websiteData, foodItems: foodItems.foodItems },
         });
       } catch {
         dispatch({
@@ -102,7 +101,6 @@ function AppProvider({ children }) {
 
   const removeFromCart = async (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
-
     if (token) {
       await axios.post(
         `${BASE_URL}/api/cart/remove`,
@@ -169,8 +167,6 @@ function AppProvider({ children }) {
         setCartItems,
         currency,
         deliveryCharge,
-        setAvailableBalance,
-        availableBalance,
       }}
     >
       {children}

@@ -1,8 +1,11 @@
+@import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
   --color-primary: #fc8a06;
   --color-subtitle: #03081f;
+  --color-light: #aaa;
 
   --bg-footer-dark: #03081f;
   --bg-footer-light: #d9d9d9;
@@ -28,6 +31,12 @@ input:focus {
   background-color: #fff;
 }
 
+/* REUSABLE */
+
+.section {
+  padding: 0 4rem;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 61.25em) {
   html {
@@ -44,5 +53,9 @@ input:focus {
 @media (max-width: 48em) {
   html {
     font-size: 56.25%;
+  }
+
+  .section {
+    padding: 0 2rem;
   }
 }

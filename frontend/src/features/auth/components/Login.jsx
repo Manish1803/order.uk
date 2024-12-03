@@ -1,7 +1,7 @@
 import styles from "./Form.module.css";
 
 import { toast } from "react-hot-toast";
-import { useAuth } from "./../../../contexts/AuthContext";
+import { useAuth } from "./../../../contexts/UserContext";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
