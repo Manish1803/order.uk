@@ -53,7 +53,7 @@ function AppProvider({ children }) {
   const fetchFoodItems = async () => {
     try {
       const res = await axios.get(`${BASE_URL}/api/food/get-foods`);
-      setFoodItems(res.data.foodItems.foodItems);
+      setFoodItems(res.data.foodItems);
     } catch (error) {
       console.error("Error fetching food items:", error);
     }

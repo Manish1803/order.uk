@@ -23,10 +23,10 @@ import {
 import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const { websiteData: data, isMobile } = useApp();
+  const { websiteData: data, isMobile, foodItems } = useApp();
   const navigate = useNavigate();
 
-  if (!data) return <Spinner />;
+  if (!data || !foodItems) return <Spinner />;
 
   return (
     <>

@@ -15,10 +15,11 @@ import {
 import { McdBanner, FoodDisplay } from "./components";
 
 function Product() {
-  const { websiteData: data, isDataLoading, isMobile } = useApp();
+  const { websiteData: data, isDataLoading, isMobile, foodItems } = useApp();
   const { isDataLoading: isAuth } = useAuth();
 
   if (isDataLoading || isAuth || !data) return <Spinner />;
+  if (!foodItems) return <Spinner />;
 
   return (
     <>

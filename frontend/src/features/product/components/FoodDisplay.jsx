@@ -50,7 +50,7 @@ function FoodDisplay() {
 
   const categories = ["All", ...new Set(foodData.map((item) => item.category))];
 
-  if (isDataLoading) {
+  if (isDataLoading || !foodData) {
     return <Spinner />;
   }
 

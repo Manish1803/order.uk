@@ -23,7 +23,7 @@ function Cart() {
   if (isDataLoading) return <Spinner />;
 
   return (
-    <article className={styles.cart}>
+    <article className={styles.cart} onClick={(e) => e.stopPropagation()}>
       <div className={styles.cartShare}>
         <IoShareSocialOutline size="5rem" />
         <p className={styles.shareText}>Share this cart with your friends</p>
