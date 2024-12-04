@@ -52,14 +52,10 @@ function AppProvider({ children }) {
 
   const fetchFoodItems = async () => {
     try {
-      const foodRes = await fetch(`${BASE_URL}/api/food/get-foods`);
-      const foodItems = await foodRes.json();
-      setFoodItems(foodItems.foodItems);
+      const res = await axios.get(`${BASE_URL}/api/food/get-foods`);
+      setFoodItems(res.data.foodItems.foodItems);
     } catch (error) {
-      console.error({
-        message: "Error fetching food items:",
-        error,
-      });
+      console.error("Error fetching food items:", error);
     }
   };
 
@@ -70,7 +66,7 @@ function AppProvider({ children }) {
         const res = await fetch(`${BASE_URL}/data`);
         const websiteData = await res.json();
 
-        fetchFoodItems();
+        await fetchFoodItems();
 
         dispatch({
           type: "success",
