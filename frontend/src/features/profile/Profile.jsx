@@ -18,6 +18,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 import { useAuth } from "../../contexts/UserContext";
 import { useState } from "react";
+import AddCard from "./components/AddCard";
 
 function Profile() {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ function Profile() {
   const { user } = useAuth();
 
   const [isEditable, setIsEditable] = useState(false);
+  const [showAddCard, setShowAddCard] = useState(false);
 
   if (!user) return <Spinner />;
 
@@ -55,7 +57,7 @@ function Profile() {
               <span>My Profile</span>
             </h2>
           )}
-          <article className={styles.container}>
+          <article className={styles.detailsContainer}>
             <div className={styles.profileHeader}>
               <div className={styles.profileContainer}>
                 <img
@@ -81,7 +83,7 @@ function Profile() {
                   name="name"
                   id="name"
                   value={user.name}
-                  disabled={isEditable}
+                  disabled={!isEditable}
                 />
               </div>
               <div className={styles.inputContainer}>
@@ -92,7 +94,7 @@ function Profile() {
                   name="email"
                   id="email"
                   value={user.email}
-                  disabled={isEditable}
+                  disabled={!isEditable}
                 />
               </div>
               <div className={styles.inputContainer}>
@@ -103,7 +105,7 @@ function Profile() {
                   name="phone"
                   id="phone"
                   value={user.phone}
-                  disabled={isEditable}
+                  disabled={!isEditable}
                 />
               </div>
               <div className={styles.inputContainer}>
@@ -114,11 +116,25 @@ function Profile() {
                   name="country"
                   id="country"
                   value={user.country}
-                  disabled={isEditable}
+                  disabled={!isEditable}
                 />
               </div>
             </div>
           </article>
+          <article className={styles.paymentContainer}>
+            <h2 className={styles.paymentheading}>Saved Payment Method</h2>
+            <div className={styles.paymentDetails}>
+              <div
+                className={styles.addPaymentButton}
+                onClick={() => setShowAddCard((is) => !is)}
+              >
+                <div className={styles.circle}>+</div>
+                <p>Add New Card</p>
+              </div>
+            </div>
+          </article>
+
+          {showAddCard && <AddCard setShowAddCard={setShowAddCard} />}
         </section>
       </Main>
       <Footer />

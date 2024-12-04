@@ -45,6 +45,13 @@ const userReducer = (state, action) => {
         isLoading: false,
         error: null,
       };
+    case "setUser":
+      return {
+        ...state,
+        user: action.payload,
+        isLoading: false,
+        error: null,
+      };
     case "error":
       return {
         ...state,
@@ -62,7 +69,7 @@ const userReducer = (state, action) => {
 function UserProvider({ children }) {
   const [state, dispatch] = useReducer(userReducer, initialState);
 
-  const { user, token, isAuthenticate } = state;
+  const { user, token, isAuthenticate, isLoading } = state;
 
   useEffect(() => {
     const validateToken = async () => {
@@ -146,10 +153,14 @@ function UserProvider({ children }) {
     JSON.parse(localStorage.getItem("user"))?.name?.split(" ")[0] ||
     "";
 
+  const userId = user?.id || JSON.parse(localStorage.getItem("user"))?.id || "";
+
   return (
     <UserContext.Provider
       value={{
+        userId,
         username,
+        isLoading,
         user,
         isAuthenticate,
         signup,
