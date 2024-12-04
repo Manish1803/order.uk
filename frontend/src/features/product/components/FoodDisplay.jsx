@@ -7,13 +7,19 @@ import { Spinner, Overlay } from "./../../../components";
 import { useApp } from "../../../contexts/AppContext";
 import { useEffect, useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import OfferDealList from "./OfferDealList";
 
 function FoodDisplay() {
   const navigate = useNavigate();
   const location = useLocation();
   const path = location.pathname === "/product/cart";
 
-  const { foodItems: foodData, isDataLoading, isMobile } = useApp();
+  const {
+    foodItems: foodData,
+    isDataLoading,
+    isMobile,
+    websiteData: data,
+  } = useApp();
 
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [search, setSearch] = useState("");
@@ -50,7 +56,7 @@ function FoodDisplay() {
 
   const categories = ["All", ...new Set(foodData.map((item) => item.category))];
 
-  if (isDataLoading || !foodData) {
+  if (isDataLoading || !foodData || !data) {
     return <Spinner />;
   }
 
@@ -75,7 +81,10 @@ function FoodDisplay() {
 
       <div className={styles.categoryContainer}>
         <div className={styles.categories}>
-          <button className={`${styles.cbtn} ${showOffer && styles.active}`}>
+          <button
+            className={`${styles.cbtn} ${showOffer && styles.active}`}
+            onClick={() => setShowOffer((is) => !is)}
+          >
             Offers
           </button>
           {categories.map((category) => (
@@ -92,29 +101,31 @@ function FoodDisplay() {
         </div>
       </div>
 
-      <div className={styles.mainContainer}>
-        <div className={styles.foodItems}>
-          {Object.entries(filteredData).map(([category, items]) => (
-            <div key={category} className={styles.categoryCard}>
-              <h2 className={styles.categoryName}>{category}</h2>
-              <div className={styles.itemsContainer}>
-                {items.map((item) => (
-                  <FoodCard key={item._id} food={item} />
-                ))}
+      <div className={styles.main}>
+        {showOffer && <OfferDealList data={data.offersDeals} />}
+        <div className={styles.mainContainer}>
+          <div className={styles.foodItems}>
+            {Object.entries(filteredData).map(([category, items]) => (
+              <div key={category} className={styles.categoryCard}>
+                <h2 className={styles.categoryName}>{category}</h2>
+                <div className={styles.itemsContainer}>
+                  {items.map((item) => (
+                    <FoodCard key={item._id} food={item} />
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          {!isMobile ? (
+            <Outlet />
+          ) : (
+            path && (
+              <Overlay onClick={() => navigate(-1)}>
+                <Outlet />
+              </Overlay>
+            )
+          )}
         </div>
-
-        {!isMobile ? (
-          <Outlet />
-        ) : (
-          path && (
-            <Overlay onClick={() => navigate(-1)}>
-              <Outlet />
-            </Overlay>
-          )
-        )}
       </div>
     </section>
   );

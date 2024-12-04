@@ -12,7 +12,13 @@ import {
   Footer,
 } from "./../../components";
 
-import { McdBanner, FoodDisplay } from "./components";
+import {
+  McdBanner,
+  FoodDisplay,
+  CustomerReview,
+  Map,
+  InfoTab,
+} from "./components";
 
 function Product() {
   const { websiteData: data, isDataLoading, isMobile, foodItems } = useApp();
@@ -34,7 +40,13 @@ function Product() {
         <McdBanner data={data.mcdBanner} appRating={data.appRating} />
       </Main>
       <FoodDisplay />
-      {/* <CustomerReview isMobile={isMobile} /> */}
+      {!isMobile && (
+        <Main>
+          <InfoTab />
+          <Map />
+        </Main>
+      )}
+      <CustomerReview isMobile={isMobile} />
       <Main>
         <RestaurantList title={"Similar"} data={data.popularRestaurants} />
       </Main>
