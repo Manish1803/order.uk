@@ -29,7 +29,7 @@ function AuthPage() {
                 start ordering.
               </p>
             </div>
-            {isLogin ? <Login /> : <SignUp />}
+            {isLogin ? <Login /> : <SignUp setIsLogin={setIsLogin} />}
             <p className={styles.toggleForm}>
               {isLogin
                 ? "Don't you have an account?"

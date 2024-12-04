@@ -5,8 +5,8 @@ import { toast } from "react-hot-toast";
 import { useAuth } from "./../../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 
-function SignUp() {
-  const { signup } = useAuth();
+function SignUp({ setIsLogin }) {
+  const { signup, isLoading } = useAuth();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -52,6 +52,7 @@ function SignUp() {
           formData.password
         );
         toast.success("Account created successfully!");
+        setIsLogin(true);
         navigate("/");
       } catch (error) {
         toast.error(error.message || "Failed to create account!");
@@ -119,7 +120,9 @@ function SignUp() {
         />
         <span className={styles.error}>{errors.password}</span>
       </div>
-      <button className={styles.btn}>Continue</button>
+      <button className={styles.btn} disabled={isLoading}>
+        Continue
+      </button>
     </form>
   );
 }

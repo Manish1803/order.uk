@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const { login } = useAuth();
+  const { login, isLoading } = useAuth();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -79,7 +79,9 @@ function Login() {
         />
         <span className={styles.error}>{errors.password}</span>
       </div>
-      <button className={styles.btn}>Continue</button>
+      <button className={styles.btn} disabled={isLoading}>
+        Sign in
+      </button>
     </form>
   );
 }
