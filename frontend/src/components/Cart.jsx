@@ -57,7 +57,7 @@ function Cart() {
                   <div>
                     <MdDeleteForever
                       size="3rem"
-                      color="#35A60D"
+                      color="#D70125"
                       onClick={() => removeFromCart(item._id)}
                     />
                   </div>

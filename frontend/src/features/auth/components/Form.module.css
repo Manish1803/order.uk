@@ -42,3 +42,8 @@
   border: none;
   cursor: pointer;
 }
+
+.btn:disabled {
+  background-color: #fff3e6;
+  cursor: not-allowed;
+}

@@ -5,7 +5,7 @@ function Overlay({ children, onClick }) {
         position: "fixed",
         top: 0,
         left: 0,
-        width: "100%",
+        width: "100vw",
         height: "100vh",
         backgroundColor: "#0004",
         zIndex: 999,
